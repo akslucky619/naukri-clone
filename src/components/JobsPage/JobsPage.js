@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../Cards/Cards";
+import Modal from "../Modal/Modal";
 import Nav from "../Nav/Nav";
 import "./JobsPage.css";
 
 function JobsPage() {
+  const [show, setShow] = useState(false);
+
   return (
     <div className="jobs-parent">
       <div className="jobs-header">
@@ -24,6 +27,8 @@ function JobsPage() {
           <Card />
           <Card />
         </div> */}
+        <button onClick={() => setShow(true)}>click</button>
+        <Modal onClose={() => setShow(false)} show={show} />
       </div>
     </div>
   );

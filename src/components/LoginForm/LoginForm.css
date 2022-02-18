@@ -16,11 +16,37 @@
 }
 
 .form {
-  background: red;
+  background: #ffffff;
   position: absolute;
   width: 33.3%;
   height: 400px;
   left: 33.3%;
   top: 150px;
   border-radius: 20px;
+  box-shadow: -4px 21px 29px -10px rgb(186 186 186 / 75%);
+}
+
+.form-parent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.inputs {
+  height: 45px;
+  border: 1px solid #63b4dc;
+  border-radius: 10px;
+  background: #f3f3f3;
+}
+
+.forgot-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.incorrect-fields {
+  display: flex;
+  justify-content: end;
 }
