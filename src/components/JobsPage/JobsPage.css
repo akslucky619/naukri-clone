@@ -1,0 +1,28 @@
+.jobs-parent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.jobs-header {
+  flex: 1;
+  background: grey;
+}
+
+.jobs-main {
+  flex: 3;
+  background: #edf6ff;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+  margin-left: 20%;
+  position: relative;
+  bottom: 60px;
+  height: 100%;
+}
