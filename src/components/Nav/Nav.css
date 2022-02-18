@@ -1,0 +1,18 @@
+.login-bar {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  position: relative;
+  left: 5%;
+  height: 50px;
+}
+
+.title-text {
+  flex: 1 1;
+}
+
+.title-button {
+  flex: 1 1;
+  justify-content: flex-end;
+  display: flex;
+}
