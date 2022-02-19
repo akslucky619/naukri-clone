@@ -6,7 +6,7 @@
 }
 
 .header {
-  flex: 2;
+  flex: 4;
   background-color: #2f3d5e;
   display: flex;
   flex-direction: column;
@@ -19,11 +19,13 @@
 .page-title {
   flex: 5;
   display: flex;
+  padding: 90px;
 }
 
 .bottom {
   flex: 3;
-  background-color: #EDF6FF;
+  background: #edf6ff;
+  padding: 151px;
 }
 
 .login-bar {
@@ -50,7 +52,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 5%;
+  margin-left: 12%;
 }
 
 .page-image {
@@ -58,6 +60,16 @@
 }
 
 .image {
-  position: relative;
-  top: 125px;
+  position: absolute;
+  top: 90px;
+  width: 855px;
+  height: 588px;
+  right: 160px;
+}
+
+.home-cards {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-left: 10%;
 }

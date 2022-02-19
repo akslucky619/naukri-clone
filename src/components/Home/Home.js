@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Card from "../Cards/Cards";
 import Nav from "../Nav/Nav";
+import Button from "../Button.js/Button";
 import "./Home.css";
 
 function Home() {
+  const maps = [1, 2, 3];
   return (
     <div className="parent">
       <div className="header">
@@ -19,7 +21,15 @@ function Home() {
                 Welcome to
               </div>
               <div>
-                <span style={{ fontSize: "80px", fontWeight: "bold" }}>My</span>
+                <span
+                  style={{
+                    fontSize: "80px",
+                    fontWeight: "bold",
+                    color: "white",
+                  }}
+                >
+                  My
+                </span>
                 <span
                   style={{
                     fontSize: "80px",
@@ -29,6 +39,12 @@ function Home() {
                 >
                   Jobs
                 </span>
+              </div>
+              <div>
+                <Button
+                  styles={{ backgroundColor: "#43AFFF", color: "white" }}
+                  text="Get Started"
+                />
               </div>
             </div>
           </div>
@@ -40,8 +56,22 @@ function Home() {
         </div>
       </div>
       <div className="bottom">
-        <div>
-          <Card />
+        <div>Why Us</div>
+        <div className="home-cards">
+          {maps.map((map) => (
+            <div>
+              <Card style={{width:'340px', height:'190px'}} />
+            </div>
+          ))}
+        </div>
+        <div className="companies">
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
         </div>
       </div>
     </div>

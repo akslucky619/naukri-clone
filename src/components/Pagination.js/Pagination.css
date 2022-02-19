@@ -1,0 +1,37 @@
+.paginate-parent {
+  display: flex;
+  justify-content: center;
+  /* position: relative; */
+  /* bottom: 45px; */
+  width: 10%;
+}
+
+.pages {
+  flex: 1;
+  justify-content: center;
+  background: #edf6ff;
+  border: 1px solid #8e9baf;
+  border-radius: 3px;
+  margin-left: 8px;
+  color: #8e9baf;
+  display: flex;
+}
+
+.next {
+  flex: 1 1 0%;
+  margin-left: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+
+  border: 1px solid;
+}
+.prev {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 3px;
+}

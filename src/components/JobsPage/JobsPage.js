@@ -93,7 +93,7 @@ function JobsPage() {
             style={{ width: "22%", height: "30%" }}
           />
         </div>
-        <div>
+        <div className="paginate">
           <Pagination />
         </div>
         {/* <button onClick={() => setShow(true)}>click</button> */}
@@ -125,7 +125,6 @@ function JobsPage() {
             </div>
           </div>
         </Modal>
-        
       </div>
     </div>
   );

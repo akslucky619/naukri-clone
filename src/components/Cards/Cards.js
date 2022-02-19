@@ -7,7 +7,7 @@ function Card(props) {
   return (
     <div style={props.style} className="card-parent">
       <div>
-        <div>
+        <div className="title">
           <h2>Title</h2>
         </div>
         <div>
@@ -17,10 +17,14 @@ function Card(props) {
             description Lorem ipsum description
           </p>
         </div>
-        <div>
+        <div className="card-bottom">
           <p>Gurgaon</p>
           {/* <button></button> */}
-          <Button onClick={props.onClick} text="View applicants" />
+          <Button
+            styles={{ color: "#414141" }}
+            onClick={props.onClick}
+            text="View applicants"
+          />
         </div>
       </div>
     </div>
