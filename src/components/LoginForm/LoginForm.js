@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Nav from "../Nav/Nav";
 import axios from "axios";
 import "./LoginForm.css";
+import Button from "../Button.js/Button";
 
 function LoginForm() {
   // const [email, setEmail] = useState("");
@@ -63,7 +64,8 @@ function LoginForm() {
               <div className="incorrect-fields">
                 <p>Incorrect email address or password</p>
               </div>
-              <button type="submit">Login</button>
+              {/* <button type="submit">Login</button> */}
+              <Button type='submit' text='Login' />
               <div>
                 New to MyJobs? <a href="/">Create an account</a>
               </div>

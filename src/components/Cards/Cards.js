@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button.js/Button";
 import "./cards.css";
 
 function Card(props) {
@@ -18,7 +19,8 @@ function Card(props) {
         </div>
         <div>
           <p>Gurgaon</p>
-          <button>View applicants</button>
+          {/* <button></button> */}
+          <Button onClick={props.onClick} text="View applicants" />
         </div>
       </div>
     </div>

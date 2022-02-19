@@ -7,8 +7,8 @@ function Nav() {
     <div>
       <div className="login-bar">
         <div className="title-text">
-          <span>My</span>
-          <span>Jobs</span>
+          <span style={{ color: "white" }}>My</span>
+          <span style={{ color: "#43AFFF" }}>Jobs</span>
         </div>
         <div className="title-button">
           <button>
