@@ -3,6 +3,7 @@ import Card from "../Cards/Cards";
 import Nav from "../Nav/Nav";
 import Button from "../Button.js/Button";
 import "./Home.css";
+import liva from "./liva.png";
 
 function Home() {
   const maps = [1, 2, 3];
@@ -56,22 +57,46 @@ function Home() {
         </div>
       </div>
       <div className="bottom">
-        <div>Why Us</div>
+        <div className="why-us">Why Us</div>
         <div className="home-cards">
           {maps.map((map) => (
             <div>
-              <Card style={{width:'340px', height:'190px'}} />
+              <Card style={{ width: "340px", height: "190px" }} />
             </div>
           ))}
         </div>
         <div className="companies">
-          <div>1</div>
-          <div>1</div>
-          <div>1</div>
-          <div>1</div>
-          <div>1</div>
-          <div>1</div>
-          <div>1</div>
+          <div className="company-row1">
+            <div>
+              <img src={liva} />
+            </div>
+            <div>
+              <img src={liva} />
+            </div>{" "}
+            <div>
+              <img src={liva} />
+            </div>{" "}
+            <div>
+              <img src={liva} />
+            </div>{" "}
+          </div>
+          <div className="company-row2">
+            <div>
+              <img src={liva} />
+            </div>{" "}
+            <div>
+              <img src={liva} />
+            </div>{" "}
+            <div>
+              <img src={liva} />
+            </div>{" "}
+            <div>
+              <img src={liva} />
+            </div>{" "}
+            <div>
+              <img src={liva} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
