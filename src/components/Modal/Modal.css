@@ -9,3 +9,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.modal-parent {
+  height: 80%;
+  width: 40%;
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  max-height: 80%;
+  overflow-y: scroll;
+}

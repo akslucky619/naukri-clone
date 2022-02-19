@@ -14,7 +14,7 @@ function JobsPage() {
       </div>
       <div className="jobs-main">
         {/* <div className="cards">
-          <Card />
+          <Card style={{width:'280px', height:'190px'}} />
           <Card />
           <Card />
           <Card />
@@ -28,7 +28,34 @@ function JobsPage() {
           <Card />
         </div> */}
         <button onClick={() => setShow(true)}>click</button>
-        <Modal onClose={() => setShow(false)} show={show} />
+        <Modal onClose={() => setShow(false)} show={show}>
+          <div className="modal-parent">
+            <div>
+              <div>
+                <div>Modal Header</div>
+                <button onClick={() => setShow(false)} className="button">
+                  Close
+                </button>
+              </div>
+              <div>
+                <div>Modal underline</div>
+              </div>
+              <span>Total applicants</span>
+              <div>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+              </div>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );
