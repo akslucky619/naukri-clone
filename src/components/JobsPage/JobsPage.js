@@ -9,6 +9,8 @@ import { modalData } from "../../data/modaldata";
 import NamedDiv from "../NamedDiv/NamedDiv";
 
 function JobsPage(props) {
+  const { user, handleLogout } = props;
+
   const [show, setShow] = useState(false);
   const [currentPage, setCurentPage] = useState(1);
   const [postPerPage] = useState(12);
@@ -38,7 +40,7 @@ function JobsPage(props) {
   return (
     <div className="jobs-parent">
       <div className="jobs-header">
-        <Nav handleLogout={props.handleLogout} />
+        <Nav handleLogout={handleLogout} user={user} />
         <div style={{ marginLeft: "10%", marginTop: "12px" }}>
           <div style={{ display: "flex" }}>
             <span style={{ marginTop: "6px", marginRight: "4px" }}>

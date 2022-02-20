@@ -10,6 +10,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [loginPage, setLoginPage] = useState(false);
   const [homePage, setHomePage] = useState(true);
+  const [logoutpopUp, setLogoutpopUp] = useState(false);
 
   useEffect(() => {
     let user = localStorage.getItem("user");
@@ -39,6 +40,7 @@ function App() {
     setUser(null);
     setHomePage(true);
     setLoginPage(false);
+    setLogoutpopUp(true);
   };
 
   return (
@@ -55,6 +57,7 @@ function App() {
         <Home
           handleHomePage={handleHomePage}
           handleLoginPage={handleLoginPage}
+          logoutpopUp={logoutpopUp}
         />
       )}
       {loginPage && (

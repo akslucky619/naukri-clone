@@ -112,3 +112,14 @@
 .cards-home-desc {
   color: #303f60;
 }
+
+.logout-success {
+  position: absolute;
+  background: white;
+  left: 72.5%;
+  top: 94px;
+  z-index: 1;
+  width: 421px;
+  height: 100px;
+  border-radius: 5px;
+}
