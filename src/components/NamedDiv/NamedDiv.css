@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #9c9ca8;
+  background: #d9efff;
   border-radius: 50%;
   font-size: 33px;
+  color: #303f60;
 }

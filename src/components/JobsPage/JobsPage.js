@@ -5,6 +5,7 @@ import Nav from "../Nav/Nav";
 import Pagination from "../Pagination.js/Pagination";
 import "./JobsPage.css";
 import { apidata } from "../../data/apidata";
+import { modalData } from "../../data/modaldata";
 import NamedDiv from "../NamedDiv/NamedDiv";
 
 function JobsPage(props) {
@@ -32,7 +33,7 @@ function JobsPage(props) {
   //   pages.push(i);
   // }
 
-  console.log(apidata.data, "in jobs");
+  console.log(modalData.data, "in jobs");
 
   return (
     <div className="jobs-parent">
@@ -113,45 +114,6 @@ function JobsPage(props) {
             onClick={() => setShow(true)}
             style={{ width: "22%", height: "30%" }}
             />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
-            />{" "}
-            <Card
-            onClick={() => setShow(true)}
-            style={{ width: "22%", height: "30%" }}
           /> */}
         </div>
         <Modal onClose={() => setShow(false)} show={show}>
@@ -167,22 +129,37 @@ function JobsPage(props) {
                 <div className="modal-underline"></div>
               </div>
               <div className="modal-span">
-                <span>Total applicants</span>
+                <span>{modalData.data.length} Total applicants</span>
               </div>
-              <div className="no-applicants">
-                {/* <Card style={{ width: "360px", height: "200px" }}>
-                  <div className="cards-home">
-                    <h1>Verify their</h1>
-                    <h1>Abilities</h1>
-                  </div>
-                    <NamedDiv />
-                  <div className="cards-home-desc">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy
-                  </div>
-                </Card> */}
-                <div>
+              <div className="modal-cards">
+                {modalData.data.map((post) => (
+                  <Card
+                    style={{
+                      width: "45%",
+                      height: "180px",
+                      marginBottom: "15px",
+                      border: "1px solid #e6e6e6",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    <div className="modal-card-header">
+                      <div style={{ width: "24px" }}>
+                        <NamedDiv letter={post.name[0]} />
+                      </div>
+                      <div className="card-header-text">
+                        <div>{post.name}</div>
+                        <div>{post.email}</div>
+                      </div>
+                    </div>
+                    <div className="modal-card-footer">
+                      <div>skills</div>
+                      <div>{post.skills}</div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+              {/* <div className="no-applicants"> */}
+              {/* <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="84.92"
@@ -231,8 +208,8 @@ function JobsPage(props) {
                     </g>
                   </svg>
                 </div>
-                <div>No Applications available</div>
-              </div>
+                <div>No Applications available</div> */}
+              {/* </div> */}
             </div>
           </div>
         </Modal>
