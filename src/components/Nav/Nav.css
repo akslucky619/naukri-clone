@@ -4,12 +4,15 @@
   width: 90%;
   position: relative;
   left: 5%;
-  height: 50px;
+  height: 80px;
 }
 
 .title-text {
   flex: 1 1;
-  font-size: 25px;
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
 }
 
 .title-button {

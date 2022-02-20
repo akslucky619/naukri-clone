@@ -19,7 +19,7 @@
 .page-title {
   flex: 5;
   display: flex;
-  padding: 90px;
+  padding: 75px;
 }
 
 .bottom {
@@ -28,24 +28,24 @@
   padding: 151px;
 }
 
-.login-bar {
+/* .login-bar {
   display: flex;
   flex-direction: row;
   width: 90%;
   position: relative;
   left: 5%;
   height: 50px;
-}
+} */
 
-.title-text {
+/* .title-text {
   flex: 1;
-}
+} */
 
-.title-button {
+/* .title-button {
   flex: 1;
   justify-content: flex-end;
   display: flex;
-}
+} */
 
 .page-text {
   flex: 1;
@@ -75,7 +75,7 @@
 }
 
 .why-us {
-  margin-left: 9%;
+  margin-left: 12%;
   margin-bottom: 40px;
   font-size: 30px;
 }
@@ -83,6 +83,7 @@
 .companies {
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
 }
 
 .company-row1 {
@@ -99,4 +100,15 @@
   width: 80%;
   margin-left: 10%;
   justify-content: space-between;
+}
+
+.cards-home {
+  flex: 1;
+  font-size: 25px;
+  color: #43afff;
+  font-weight: 500;
+}
+
+.cards-home-desc {
+  color: #303f60;
 }

@@ -34,13 +34,6 @@ function App() {
     setHomePage(true);
   };
 
-  const handleLogout = () => {
-    localStorage.clear();
-    setUser(null);
-    setHomePage(true);
-    setLoginPage(false);
-  };
-
   return (
     <>
       {/* <Routes>
@@ -64,7 +57,7 @@ function App() {
           user={user}
         />
       )}
-      {user && <JobsPage handleLogout={handleLogout} user={user} />}
+      {user && <JobsPage user={user} />}
     </>
   );
 }

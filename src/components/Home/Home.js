@@ -4,14 +4,20 @@ import Nav from "../Nav/Nav";
 import Button from "../Button.js/Button";
 import "./Home.css";
 import liva from "./liva.png";
+import Solaytic from "./solaytic@2x.png";
 
-function Home() {
+function Home(props) {
+  console.log({ props });
+  const { handleLoginPage, handleHomePage } = props;
   const maps = [1, 2, 3];
   return (
     <div className="parent">
       <div className="header">
         <div className="login-title">
-          <Nav />
+          <Nav
+            handleLoginPage={handleLoginPage}
+            handleHomePage={handleHomePage}
+          />
         </div>
         <div className="page-title">
           <div className="page-text">
@@ -59,16 +65,47 @@ function Home() {
       <div className="bottom">
         <div className="why-us">Why Us</div>
         <div className="home-cards">
-          {maps.map((map) => (
-            <div>
-              <Card style={{ width: "340px", height: "190px" }} />
-            </div>
-          ))}
+          <div>
+            <Card style={{ width: "360px", height: "200px" }}>
+              <div className="cards-home">
+                <h1>Get More</h1>
+                <h1>Mobility</h1>
+              </div>
+              <div className="cards-home-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+              </div>
+            </Card>
+          </div>
+          <div>
+            <Card style={{ width: "360px", height: "200px" }}>
+              <div className="cards-home">
+                <h1>Organise your</h1>
+                <h1>Candidates</h1>
+              </div>
+              <div className="cards-home-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+              </div>
+            </Card>
+          </div>
+          <div>
+            <Card style={{ width: "360px", height: "200px" }}>
+              <div className="cards-home">
+                <h1>Verify their</h1>
+                <h1>Abilities</h1>
+              </div>
+              <div className="cards-home-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+              </div>
+            </Card>
+          </div>
         </div>
         <div className="companies">
           <div className="company-row1">
             <div>
-              <img src={liva} />
+              <img src={Solaytic} />
             </div>
             <div>
               <img src={liva} />

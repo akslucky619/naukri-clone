@@ -37,10 +37,25 @@
   overflow-y: scroll;
 }
 
-.paginate{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    bottom: 45px;
-    width: 100%;
+.paginate {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 45px;
+  width: 100%;
+}
+
+.no-jobs {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.no-jobs > h4 {
+  font-size: 20px;
+  color: #303f60;
+  margin-top: 10px;
 }

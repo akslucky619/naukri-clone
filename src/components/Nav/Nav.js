@@ -2,19 +2,21 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./Nav.css";
 
-function Nav() {
+function Nav(props) {
+  console.log({ props }, 'in nav');
   return (
     <div>
       <div className="login-bar">
-        <div className="title-text">
+        <div onClick={props.handleHomePage} className="title-text">
           <span style={{ color: "white" }}>My</span>
           <span style={{ color: "#43AFFF" }}>Jobs</span>
         </div>
         <div className="title-button">
-          <button>
-            <nav>
+          <button onClick={props.handleLoginPage}>
+            {/* <nav>
               <Link to="/login">Login/Signup</Link>
-            </nav>
+            </nav> */}
+            Login/Signup
           </button>
         </div>
       </div>
@@ -25,7 +27,7 @@ function Nav() {
           backgroundColor: "white",
           position: "absolute",
           left: "5%",
-          top: "50px",
+          top: "75px",
         }}
       ></div>
     </div>

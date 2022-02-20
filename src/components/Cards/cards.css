@@ -17,7 +17,7 @@
 }
 
 .description {
-  flex: 1;
+  flex: 2;
   color: #303f60;
 }
 
@@ -25,11 +25,17 @@
   display: flex;
   justify-content: space-between;
   flex: 1;
-  margin-top: 27px;
+  /* margin-top: 27px; */
 }
 
 .card-bottom > p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }

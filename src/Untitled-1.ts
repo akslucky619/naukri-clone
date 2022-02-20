@@ -10,6 +10,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [loginPage, setLoginPage] = useState(false);
   const [homePage, setHomePage] = useState(true);
+  const [currentPage, setPage] = useState(null);
 
   useEffect(() => {
     let user = localStorage.getItem("user");
@@ -17,7 +18,18 @@ function App() {
     setUser(user);
   }, [user]);
 
+  useEffect(() => {
+    if (!currentPage && !localStorage.getItem("page")) {
+      setPage("home");
+    }
+    let page = localStorage.getItem("page");
+    console.log(page);
+    setPage(page);
+  }, [currentPage]);
+
   const handleLoginPage = () => {
+    localStorage.setItem("page", "login");
+    setPage("login");
     setLoginPage(true);
     setHomePage(false);
   };
@@ -30,15 +42,10 @@ function App() {
   };
 
   const handleHomePage = () => {
+    localStorage.setItem("page", "home");
+    setPage("home");
     setLoginPage(false);
     setHomePage(true);
-  };
-
-  const handleLogout = () => {
-    localStorage.clear();
-    setUser(null);
-    setHomePage(true);
-    setLoginPage(false);
   };
 
   return (
@@ -51,20 +58,20 @@ function App() {
         />
         <Route path="/jobs" element={<JobsPage />} />
       </Routes> */}
-      {homePage && !user && (
+      {homePage && !user && currentPage === "home" && (
         <Home
           handleHomePage={handleHomePage}
           handleLoginPage={handleLoginPage}
         />
       )}
-      {loginPage && (
+      {loginPage && currentPage === "login" && (
         <LoginForm
           handleHomePage={handleHomePage}
           handleUser={handleUser}
           user={user}
         />
       )}
-      {user && <JobsPage handleLogout={handleLogout} user={user} />}
+      {user && <JobsPage />}
     </>
   );
 }

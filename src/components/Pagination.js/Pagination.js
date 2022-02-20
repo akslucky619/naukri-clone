@@ -1,8 +1,12 @@
 import React from "react";
 import "./Pagination.css";
 
-function Pagination() {
-  const pages = [1, 2, 3, 4,5];
+function Pagination(props) {
+  const { postsPerPage, totalPosts } = props;
+  console.log({ props }, "in pagination");
+  const pages = [1, 2, 3];
+
+  console.log(pages, "pages");
 
   return (
     <div className="paginate-parent">
