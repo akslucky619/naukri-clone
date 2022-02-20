@@ -5,6 +5,7 @@ import Nav from "../Nav/Nav";
 import Pagination from "../Pagination.js/Pagination";
 import "./JobsPage.css";
 import { apidata } from "../../data/apidata";
+import NamedDiv from "../NamedDiv/NamedDiv";
 
 function JobsPage(props) {
   const [show, setShow] = useState(false);
@@ -21,13 +22,17 @@ function JobsPage(props) {
   const indexFirst = indexLast - postPerPage;
   const currentPosts = data.slice(indexFirst, indexLast);
 
-  const pages = [];
+  const pageCount = Math.ceil(apidata.data.length / postPerPage);
 
-  for (let i = 1; i <= Math.ceil(postPerPage / data.length); i++) {
-    pages.push(i);
-  }
+  const paginate = (pageNumber) => setCurentPage(pageNumber);
 
-  console.log(pages, "in jobs");
+  // const pages = [];
+
+  // for (let i = 1; i <= Math.ceil(postPerPage / data.length); i++) {
+  //   pages.push(i);
+  // }
+
+  console.log(apidata.data, "in jobs");
 
   return (
     <div className="jobs-parent">
@@ -151,36 +156,95 @@ function JobsPage(props) {
         </div>
         <Modal onClose={() => setShow(false)} show={show}>
           <div className="modal-parent">
-            <div>
-              <div>
-                <div>Modal Header</div>
+            <div className="modal-child">
+              <div className="close-header">
+                <div className="modal-header">Modal Header</div>
                 <button onClick={() => setShow(false)} className="button">
                   Close
                 </button>
               </div>
               <div>
-                <div>Modal underline</div>
+                <div className="modal-underline"></div>
               </div>
-              <span>Total applicants</span>
-              <div>
-                <Card style={{ width: "360px", height: "200px" }}>
+              <div className="modal-span">
+                <span>Total applicants</span>
+              </div>
+              <div className="no-applicants">
+                {/* <Card style={{ width: "360px", height: "200px" }}>
                   <div className="cards-home">
                     <h1>Verify their</h1>
                     <h1>Abilities</h1>
                   </div>
+                    <NamedDiv />
                   <div className="cards-home-desc">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy
                   </div>
-                </Card>
+                </Card> */}
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="84.92"
+                    height="106.15"
+                    viewBox="0 0 84.92 106.15"
+                  >
+                    <g
+                      id="curriculum"
+                      transform="translate(-51.2)"
+                      opacity="0.5"
+                    >
+                      <g
+                        id="Group_2010"
+                        data-name="Group 2010"
+                        transform="translate(114.89)"
+                      >
+                        <g id="Group_2009" data-name="Group 2009">
+                          <path
+                            id="Path_52"
+                            data-name="Path 52"
+                            d="M358.4,0V21.23h21.23Z"
+                            transform="translate(-358.4)"
+                            fill="#a9afbc"
+                          />
+                        </g>
+                      </g>
+                      <g
+                        id="Group_2012"
+                        data-name="Group 2012"
+                        transform="translate(51.2)"
+                      >
+                        <g
+                          id="Group_2011"
+                          data-name="Group 2011"
+                          transform="translate(0)"
+                        >
+                          <path
+                            id="Path_53"
+                            data-name="Path 53"
+                            d="M104.275,31.845V0H56.507A5.014,5.014,0,0,0,51.2,5.308v95.535a5.014,5.014,0,0,0,5.307,5.308h74.305a5.014,5.014,0,0,0,5.307-5.308v-69ZM77.738,10.615A10.615,10.615,0,1,1,67.122,21.23,10.646,10.646,0,0,1,77.738,10.615ZM61.815,45.645c0-11.146,31.845-11.146,31.845,0v7.431H61.815Zm47.767,49.89H67.122a5.307,5.307,0,0,1,0-10.615h42.46a5.014,5.014,0,0,1,5.308,5.308A5.319,5.319,0,0,1,109.582,95.535ZM120.2,74.305H67.122a5.308,5.308,0,0,1,0-10.615H120.2A5.014,5.014,0,0,1,125.505,69,5.319,5.319,0,0,1,120.2,74.305Z"
+                            transform="translate(-51.2)"
+                            fill="#a9afbc"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div>No Applications available</div>
               </div>
             </div>
           </div>
         </Modal>
         {!show && (
           <div className="paginate">
-            <Pagination postPerPage={postPerPage} totalPages={data.length} />
+            <Pagination
+              pageCount={pageCount}
+              postPerPage={postPerPage}
+              totalPages={data.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
           </div>
         )}
       </div>

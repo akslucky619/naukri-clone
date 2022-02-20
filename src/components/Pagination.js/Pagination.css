@@ -15,6 +15,7 @@
   margin-left: 8px;
   color: #8e9baf;
   display: flex;
+  cursor: pointer;
 }
 
 .next {
@@ -24,7 +25,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 3px;
-
+  cursor: pointer;
   border: 1px solid;
 }
 .prev {
@@ -34,4 +35,17 @@
   align-items: center;
   border: 1px solid;
   border-radius: 3px;
+  cursor: pointer;
+}
+
+.active {
+  flex: 1;
+  justify-content: center;
+  background: #43afff33;
+  /* border: 1px solid #8e9baf; */
+  border-radius: 3px;
+  margin-left: 8px;
+  color: black;
+  display: flex;
+  cursor: pointer;
 }

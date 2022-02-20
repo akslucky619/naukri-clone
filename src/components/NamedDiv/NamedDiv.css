@@ -1,0 +1,10 @@
+.letter {
+  height: 60px;
+  width: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #9c9ca8;
+  border-radius: 50%;
+  font-size: 33px;
+}

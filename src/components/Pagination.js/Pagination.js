@@ -2,15 +2,31 @@ import React from "react";
 import "./Pagination.css";
 
 function Pagination(props) {
-  const { postsPerPage, totalPosts } = props;
+  const { postsPerPage, totalPosts, pageCount, paginate, currentPage } = props;
   console.log({ props }, "in pagination");
-  const pages = [1, 2, 3];
+  const pages = [];
 
-  console.log(pages, "pages");
+  for (let i = 1; i <= pageCount; i++) {
+    pages.push(i);
+  }
+
+  console.log(pages, "pages ------------->");
+
+  const forward = () => {
+    if (currentPage < pageCount) {
+      paginate(currentPage + 1);
+    }
+  };
+
+  const back = () => {
+    if (currentPage > 1) {
+      paginate(currentPage - 1);
+    }
+  };
 
   return (
     <div className="paginate-parent">
-      <div className="prev" style={{ flex: "1" }}>
+      <div onClick={back} className="prev" style={{ flex: "1" }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="5.518"
@@ -28,11 +44,16 @@ function Pagination(props) {
         </svg>
       </div>
       {pages.map((page) => (
-        <div className="pages" key={page}>
+        <div
+          key={page}
+          onClick={() => paginate(page)}
+          className={currentPage === page ? "active" : "pages"}
+          key={page}
+        >
           {page}
         </div>
       ))}
-      <div className="next" style={{ flex: "1" }}>
+      <div onClick={forward} className="next" style={{ flex: "1" }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="5.518"
