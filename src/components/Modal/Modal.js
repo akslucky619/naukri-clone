@@ -6,7 +6,6 @@ function Modal(props) {
     return null;
   }
 
-  console.log(props);
   const isChildren = props.children ? true : false;
   return (
     <div className="modal">

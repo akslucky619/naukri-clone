@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Card from "../Cards/Cards";
 import Modal from "../Modal/Modal";
 import Nav from "../Nav/Nav";
 import Pagination from "../Pagination.js/Pagination";
-import "./JobsPage.css";
 import { apidata } from "../../data/apidata";
 import { modalData } from "../../data/modaldata";
 import NamedDiv from "../NamedDiv/NamedDiv";
+import "./JobsPage.css";
 
 function JobsPage(props) {
   const { user, handleLogout } = props;
@@ -17,7 +18,17 @@ function JobsPage(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log(apidata);
+    // api not working!!
+
+    // const fetchJobs = async () => {
+    //   const result = await axios(
+    //     "https://jobs-api.squareboat.info/api/v1 /recruiters/jobs",
+    //     { headers: { Authorization: `${user}` } }
+    //   );
+    //   setData(result.data);
+
+    //   fetchJobs();
+    // };
     setData(apidata.data);
   }, []);
 
@@ -34,8 +45,6 @@ function JobsPage(props) {
   // for (let i = 1; i <= Math.ceil(postPerPage / data.length); i++) {
   //   pages.push(i);
   // }
-
-  console.log(modalData.data, "in jobs");
 
   return (
     <div className="jobs-parent">

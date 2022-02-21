@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     let user = localStorage.getItem("user");
-    console.log(user);
+    // console.log(user);
     setUser(user);
   }, [user]);
 

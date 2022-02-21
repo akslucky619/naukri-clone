@@ -22,12 +22,6 @@ function Nav(props) {
         </div>
         <div className="title-button">
           {!props.user && !props.loginPage && (
-            // <button onClick={props.handleLoginPage}>
-            //   <nav>
-            //   <Link to="/login">Login/Signup</Link>
-            // </nav>
-            //   Login/Signup
-            // </button>
             <Button
               styles={{
                 backgroundColor: "#33557E",

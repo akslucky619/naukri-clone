@@ -12,7 +12,6 @@ import lighting from "../../images/lighting.png";
 import ztos from "../../images/ztos.png";
 
 function Home(props) {
-  console.log({ props }, "===============>");
   const { handleLoginPage, handleHomePage, closeLogoutPopUp, logoutpopUp } =
     props;
 

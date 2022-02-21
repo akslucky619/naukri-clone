@@ -2,15 +2,12 @@ import React from "react";
 import "./Pagination.css";
 
 function Pagination(props) {
-  const { postsPerPage, totalPosts, pageCount, paginate, currentPage } = props;
-  console.log({ props }, "in pagination");
+  const { pageCount, paginate, currentPage } = props;
   const pages = [];
 
   for (let i = 1; i <= pageCount; i++) {
     pages.push(i);
   }
-
-  console.log(pages, "pages ------------->");
 
   const forward = () => {
     if (currentPage < pageCount) {
