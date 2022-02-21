@@ -3,7 +3,6 @@ import Button from "../Button.js/Button";
 import "./cards.css";
 
 function Card(props) {
-  // console.log(props);
   const { post } = props;
   return (
     <div style={props.style} className="card-parent">

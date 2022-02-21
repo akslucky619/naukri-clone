@@ -27,14 +27,10 @@ function JobsPage(props) {
   const [userToken, setUserToken] = useState(null);
 
   useEffect(() => {
-    // api not working!!
-    // setLoading(true);
-
     const user = localStorage.getItem("user");
     const token = JSON.parse(user);
     setUserToken(token);
 
-    console.log(token);
     const fetchJobs = async () => {
       const result = await axios(
         `https://jobs-api.squareboat.info/api/v1/recruiters/jobs?page=${currentPage}`,
@@ -44,41 +40,19 @@ function JobsPage(props) {
           },
         }
       );
-      // setLoading(false);
-      // console.log(result, "--------------->");
-      // const data = result.data.data ? result.data.data["data"] : [];
-
-      setData(result.data.data.data);
-      console.log(result.data.data.data, "--------------->");
-      const total = result.data.data.metadata["count"]
-        ? result.data.data.metadata["count"]
-        : 0;
+      if (result.data.data.data) {
+        setData(result.data.data.data);
+      }
       setTotalJobs(result.data.data.metadata["count"]);
     };
     fetchJobs();
-    console.log(totalJobs, "total jobs");
   }, [currentPage]);
 
-  // setData(result.data.data);
-  // console.log(result.data.data, "--------------->");
-  // const total = result.data.data.metadata["count"]?result.data.data.metadata["count"] : 0;
-  // setTotalJobs(total);
-
-  // const indexLast = currentPage * postPerPage;
-  // const indexFirst = indexLast - postPerPage;
   const currentPosts = data;
 
   const pageCount = Math.ceil(totalJobs / postPerPage);
 
   const paginate = (pageNumber) => setCurentPage(pageNumber);
-
-  console.log(currentPosts, "----------->");
-
-  // const pages = [];
-
-  // for (let i = 1; i <= Math.ceil(postPerPage / data.length); i++) {
-  //   pages.push(i);
-  // }
 
   return (
     <div className="jobs-parent">

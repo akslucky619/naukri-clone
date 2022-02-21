@@ -3,7 +3,6 @@ import "./Button.css";
 
 function Button(props) {
   const { classname, text, type, onClick, styles } = props;
-  // console.log(props);
 
   return (
     <button

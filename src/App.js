@@ -14,10 +14,10 @@ function App() {
   const [logoutpopUp, setLogoutpopUp] = useState(false);
   const [candidates, seCandidates] = useState({});
   const [show, setShow] = useState(false);
+  const [loginmsg, setLoginmsg] = useState(null);
 
   useEffect(() => {
     let user = localStorage.getItem("user");
-    // console.log(user);
     setUser(user);
   }, [user]);
 
@@ -44,12 +44,16 @@ function App() {
     setHomePage(true);
     setLoginPage(false);
     setLogoutpopUp(true);
+    setLoginmsg(null);
   };
 
   const closeLogoutPopUp = () => {
     setLogoutpopUp(false);
   };
-  
+
+  const handleLoginMsg = (msg) => {
+    setLoginmsg(msg);
+  };
 
   const getOneJobCandidates = (jobId, isShow) => {
     const token = JSON.parse(user);
@@ -62,7 +66,6 @@ function App() {
           },
         }
       );
-      console.log(result);
       const data = result.data;
       seCandidates(data);
       // data.length ? seCandidates(data) : seCandidates([]);
@@ -77,8 +80,6 @@ function App() {
   const closeModal = (isShow) => {
     setShow(!isShow);
   };
-
-  console.log(user);
 
   return (
     <>
@@ -96,6 +97,8 @@ function App() {
           handleHomePage={handleHomePage}
           handleUser={handleUser}
           user={user}
+          handleLoginMsg={handleLoginMsg}
+          loginmsg={loginmsg}
         />
       )}
       {user && (

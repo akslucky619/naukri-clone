@@ -17,26 +17,28 @@ function LoginForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // if (
+    //   (formData.email === "squareboat@gmail.com" &&
+    //     formData.password === "squareboat") ||
+    //   (formData.email === "sb@gmail.com" && formData.password === "squareboat")
+    // ) {
+    //   setLogged(true);
+    //   props.handleUser(formData.email);
+    // } else {
+    //   setLogged(false);
+    // }
 
-    // api not working!!
-
-    const fetchlogin = async () => {
-      const result = await axios.post(
-        `https://jobs-api.squareboat.info/api/v1/auth/login`,
-        {
-          email: formData.email,
-          password: formData.password,
-        }
-      );
-      // .then((res) => {
-      //   props.handleUser(res.data.data.token);
-      // })
-      // .catch((err) => {
-      //   console.log(err);
-      // });
-      props.handleUser(result.data.data.token);
-    };
-    fetchlogin();
+    axios
+      .post(`https://jobs-api.squareboat.info/api/v1/auth/login`, {
+        email: formData.email,
+        password: formData.password,
+      })
+      .then((res) => {
+        props.handleUser(res.data.data.token);
+      })
+      .catch((err) => {
+        props.handleLoginMsg(err.response.data.message);
+      });
   };
 
   return (
@@ -90,12 +92,12 @@ function LoginForm(props) {
                   }
                 />
               </div>
-              {!isLogged && (
+              {props.loginmsg && (
                 <div
                   style={{ color: "#FF333380" }}
                   className="incorrect-fields"
                 >
-                  <p>Incorrect email address or password</p>
+                  <p>{props.loginmsg}</p>
                 </div>
               )}
               {/* <button type="submit">Login</button> */}
