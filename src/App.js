@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./components/Home/Home";
+import axios from "axios";
 import { Routes, Route, Link } from "react-router-dom";
 import LoginForm from "./components/LoginForm/LoginForm";
 import JobsPage from "./components/JobsPage/JobsPage";
@@ -11,6 +12,7 @@ function App() {
   const [loginPage, setLoginPage] = useState(false);
   const [homePage, setHomePage] = useState(true);
   const [logoutpopUp, setLogoutpopUp] = useState(false);
+  const [candidates, seCandidates] = useState([]);
 
   useEffect(() => {
     let user = localStorage.getItem("user");
@@ -47,6 +49,18 @@ function App() {
     setLogoutpopUp(false);
   };
 
+  // const getOneJobCandidates = (jobId) => {
+  //   const fetchcandidates = async () => {
+  //     const result = await axios(
+  //       `https://jobs-api.squareboat.info/api/v1 /recruiters/jobs/4{jobId}/candidates`,
+  //       { headers: { Authorization: `${user}` } }
+  //     );
+  //     seCandidates(result.data);
+
+  //     fetchcandidates();
+  //   };
+  // };
+
   return (
     <>
       {homePage && !user && (
@@ -65,7 +79,14 @@ function App() {
           user={user}
         />
       )}
-      {user && <JobsPage handleLogout={handleLogout} user={user} />}
+      {user && (
+        <JobsPage
+          // getOneJobCandidates={getOneJobCandidates}
+          handleLogout={handleLogout}
+          user={user}
+          candidates={candidates}
+        />
+      )}
     </>
   );
 }

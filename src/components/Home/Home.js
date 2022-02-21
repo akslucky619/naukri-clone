@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Card from "../Cards/Cards";
 import Nav from "../Nav/Nav";
 import Button from "../Button.js/Button";
-import "./Home.css";
 import liva from "./liva.png";
 import Solaytic from "./solaytic@2x.png";
 import velocity from "../../images/velocity.png";
@@ -10,6 +9,7 @@ import idea from "../../images/idea.png";
 import kanba from "../../images/kanba.png";
 import lighting from "../../images/lighting.png";
 import ztos from "../../images/ztos.png";
+import "./Home.css";
 
 function Home(props) {
   const { handleLoginPage, handleHomePage, closeLogoutPopUp, logoutpopUp } =
