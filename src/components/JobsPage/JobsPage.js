@@ -40,7 +40,7 @@ function JobsPage(props) {
           },
         }
       );
-      if (result.data.data.data) {
+      if (result && result.data.data.data) {
         setData(result.data.data.data);
       }
       setTotalJobs(result.data.data.metadata["count"]);
