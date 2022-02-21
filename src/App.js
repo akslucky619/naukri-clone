@@ -1,11 +1,9 @@
-import logo from "./logo.svg";
 import { useEffect, useState } from "react";
-import "./App.css";
 import Home from "./components/Home/Home";
 import axios from "axios";
-import { Routes, Route, Link } from "react-router-dom";
 import LoginForm from "./components/LoginForm/LoginForm";
 import JobsPage from "./components/JobsPage/JobsPage";
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -68,9 +66,6 @@ function App() {
       );
       const data = result.data;
       seCandidates(data);
-      // data.length ? seCandidates(data) : seCandidates([]);
-      // result.data ? seCandidates(result.data.data) : seCandidates([]);
-      // seCandidates(result.data);
     };
 
     fetchcandidates();
