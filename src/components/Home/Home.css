@@ -122,4 +122,25 @@
   width: 421px;
   height: 100px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.log-close {
+  display: flex;
+  justify-content: flex-end;
+  width: 98%;
+  height: 20%;
+  align-items: center;
+  cursor: pointer;
+}
+
+.log-title {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-left: 20px;
+  color: #43afff;
+  font-weight: 600px;
 }

@@ -5,11 +5,17 @@ import Button from "../Button.js/Button";
 import "./Home.css";
 import liva from "./liva.png";
 import Solaytic from "./solaytic@2x.png";
+import velocity from "../../images/velocity.png";
+import idea from "../../images/idea.png";
+import kanba from "../../images/kanba.png";
+import lighting from "../../images/lighting.png";
+import ztos from "../../images/ztos.png";
 
 function Home(props) {
-  console.log({ props });
-  const { handleLoginPage, handleHomePage } = props;
-  const maps = [1, 2, 3];
+  console.log({ props }, "===============>");
+  const { handleLoginPage, handleHomePage, closeLogoutPopUp, logoutpopUp } =
+    props;
+
   return (
     <div className="parent">
       <div className="header">
@@ -18,26 +24,30 @@ function Home(props) {
             handleLoginPage={handleLoginPage}
             handleHomePage={handleHomePage}
           />
-          <div className="logout-success">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-              >
-                <path
-                  id="Icon_metro-cross"
-                  data-name="Icon metro-cross"
-                  d="M17.434,13.979h0l-4.55-4.551,4.55-4.551h0a.47.47,0,0,0,0-.663l-2.15-2.15a.47.47,0,0,0-.663,0h0L10.071,6.616,5.52,2.065h0a.47.47,0,0,0-.663,0l-2.15,2.15a.47.47,0,0,0,0,.663h0L7.258,9.428,2.708,13.979h0a.47.47,0,0,0,0,.663l2.15,2.15a.47.47,0,0,0,.663,0h0l4.551-4.551,4.551,4.551h0a.47.47,0,0,0,.663,0l2.15-2.15a.47.47,0,0,0,0-.663Z"
-                  transform="translate(-2.571 -1.928)"
-                  fill="#303f60"
-                />
-              </svg>
+          {logoutpopUp && (
+            <div className="logout-success">
+              <div className="log-close" onClick={closeLogoutPopUp}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                >
+                  <path
+                    id="Icon_metro-cross"
+                    data-name="Icon metro-cross"
+                    d="M17.434,13.979h0l-4.55-4.551,4.55-4.551h0a.47.47,0,0,0,0-.663l-2.15-2.15a.47.47,0,0,0-.663,0h0L10.071,6.616,5.52,2.065h0a.47.47,0,0,0-.663,0l-2.15,2.15a.47.47,0,0,0,0,.663h0L7.258,9.428,2.708,13.979h0a.47.47,0,0,0,0,.663l2.15,2.15a.47.47,0,0,0,.663,0h0l4.551-4.551,4.551,4.551h0a.47.47,0,0,0,.663,0l2.15-2.15a.47.47,0,0,0,0-.663Z"
+                    transform="translate(-2.571 -1.928)"
+                    fill="#303f60"
+                  />
+                </svg>
+              </div>
+              <div className="log-title">Logout</div>
+              <div style={{ marginLeft: "20px" }}>
+                You have successfully logged out
+              </div>
             </div>
-            <div>Logout</div>
-            <div>You have successfully logged out</div>
-          </div>
+          )}
         </div>
         <div className="page-title">
           <div className="page-text">
@@ -128,10 +138,13 @@ function Home(props) {
               <img src={Solaytic} />
             </div>
             <div>
-              <img src={liva} />
+              <img src={velocity} />
             </div>{" "}
             <div>
               <img src={liva} />
+            </div>{" "}
+            <div>
+              <img src={idea} />
             </div>{" "}
             <div>
               <img src={liva} />
@@ -139,16 +152,13 @@ function Home(props) {
           </div>
           <div className="company-row2">
             <div>
-              <img src={liva} />
+              <img src={kanba} />
             </div>{" "}
             <div>
-              <img src={liva} />
+              <img src={lighting} />
             </div>{" "}
             <div>
-              <img src={liva} />
-            </div>{" "}
-            <div>
-              <img src={liva} />
+              <img src={ztos} />
             </div>{" "}
             <div>
               <img src={liva} />

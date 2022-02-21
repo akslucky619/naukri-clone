@@ -34,6 +34,9 @@ function LoginForm(props) {
     } else {
       setLogged(false);
     }
+
+    // api not working!!
+
     // axios
     //   .post(`https://jobs-api.squareboat.info/api/v1 /auth/login`, {
     //     email: email,
@@ -47,9 +50,9 @@ function LoginForm(props) {
   return (
     <div className="nav-parent">
       <div className="top">
-        <Nav handleHomePage={props.handleHomePage} />1
+        <Nav handleHomePage={props.handleHomePage} />
       </div>
-      <div className="bottom">2</div>
+      <div className="bottom"></div>
       <div className="form">
         <div style={{ height: "100%" }}>
           <form style={{ height: "100%" }} onSubmit={(e) => handleSubmit(e)}>
@@ -61,9 +64,10 @@ function LoginForm(props) {
                 <p>Email Address</p>
                 <input
                   name="email"
-                  className="inputs"
+                  className={!isLogged ? "input-danger" : "inputs"}
                   type="text"
                   value={formData.email}
+                  placeholder="Enter your email"
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
@@ -72,28 +76,50 @@ function LoginForm(props) {
               <div className="pass-input">
                 <div className="forgot-label">
                   <p>Password</p>
-                  <p>Forgot your password?</p>
+                  <a
+                    style={{ color: " #43afff" }}
+                    href="https://www.google.com/search?client=opera&q=how+to+cure+dumbness&sourceid=opera&ie=UTF-8&oe=UTF-8"
+                    target="_blank"
+                  >
+                    Forgot your password?
+                  </a>
                 </div>
                 <input
-                  className="inputs"
-                  type="text"
+                  className={!isLogged ? "input-danger" : "inputs"}
+                  type="password"
                   name="password"
                   value={formData.password}
+                  placeholder="Enter your password"
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
                   }
                 />
               </div>
               {!isLogged && (
-                <div className="incorrect-fields">
+                <div
+                  style={{ color: "#FF333380" }}
+                  className="incorrect-fields"
+                >
                   <p>Incorrect email address or password</p>
                 </div>
               )}
               {/* <button type="submit">Login</button> */}
               <div className="form-submit">
-                <Button type="submit" text="Login" />
+                <Button
+                  styles={{
+                    backgroundColor: "#43AFFF",
+                    width: "185px",
+                    height: "55px",
+                    color: "white",
+                  }}
+                  type="submit"
+                  text="Login"
+                />
                 <div>
-                  New to MyJobs? <a href="/">Create an account</a>
+                  New to MyJobs?{" "}
+                  <a style={{ color: " #43afff" }} href="/" target="_blank">
+                    Create an account
+                  </a>
                 </div>
               </div>
             </div>

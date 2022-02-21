@@ -43,6 +43,10 @@ function App() {
     setLogoutpopUp(true);
   };
 
+  const closeLogoutPopUp = () => {
+    setLogoutpopUp(false);
+  };
+
   return (
     <>
       {/* <Routes>
@@ -58,6 +62,7 @@ function App() {
           handleHomePage={handleHomePage}
           handleLoginPage={handleLoginPage}
           logoutpopUp={logoutpopUp}
+          closeLogoutPopUp={closeLogoutPopUp}
         />
       )}
       {loginPage && (
