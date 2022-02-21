@@ -22,7 +22,7 @@ function JobsPage(props) {
   // const [show, setShow] = useState(false);
   const [currentPage, setCurentPage] = useState(1);
   const [postPerPage] = useState(20);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [totalJobs, setTotalJobs] = useState(0);
   const [userToken, setUserToken] = useState(null);
 
