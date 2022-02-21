@@ -5,7 +5,6 @@ import NamedDiv from "../NamedDiv/NamedDiv";
 import "./Nav.css";
 
 function Nav(props) {
-  console.log({ props }, "in nav");
 
   const [pop, setpop] = useState(false);
 

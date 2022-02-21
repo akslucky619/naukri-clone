@@ -8,6 +8,7 @@
 .jobs-header {
   flex: 1;
   background: #2f3e5e;
+  padding-bottom: 50px;
 }
 
 .jobs-main {
@@ -16,7 +17,7 @@
 }
 
 .cards {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
@@ -24,6 +25,15 @@
   margin-left: 10%;
   position: relative;
   bottom: 60px;
+  height: 100%; */
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-bottom: 20px;
+  position: relative;
+  top: -3%;
+  grid-row-gap: 20px;
+  /* left: 5%; */
+  margin-left: 5%;
   height: 100%;
 }
 
@@ -41,7 +51,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: 45px;
+  bottom: 35px;
   width: 100%;
 }
 

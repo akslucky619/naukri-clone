@@ -17,27 +17,26 @@ function LoginForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      (formData.email === "squareboat@gmail.com" &&
-        formData.password === "squareboat") ||
-      (formData.email === "sb@gmail.com" && formData.password === "squareboat")
-    ) {
-      setLogged(true);
-      props.handleUser(formData.email);
-    } else {
-      setLogged(false);
-    }
 
     // api not working!!
 
-    // axios
-    //   .post(`https://jobs-api.squareboat.info/api/v1 /auth/login`, {
-    //     email: email,
-    //     password: password,
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //   });
+    const fetchlogin = async () => {
+      const result = await axios.post(
+        `https://jobs-api.squareboat.info/api/v1/auth/login`,
+        {
+          email: formData.email,
+          password: formData.password,
+        }
+      );
+      // .then((res) => {
+      //   props.handleUser(res.data.data.token);
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
+      props.handleUser(result.data.data.token);
+    };
+    fetchlogin();
   };
 
   return (

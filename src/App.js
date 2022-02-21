@@ -12,7 +12,8 @@ function App() {
   const [loginPage, setLoginPage] = useState(false);
   const [homePage, setHomePage] = useState(true);
   const [logoutpopUp, setLogoutpopUp] = useState(false);
-  const [candidates, seCandidates] = useState([]);
+  const [candidates, seCandidates] = useState({});
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     let user = localStorage.getItem("user");
@@ -48,18 +49,36 @@ function App() {
   const closeLogoutPopUp = () => {
     setLogoutpopUp(false);
   };
+  
 
-  // const getOneJobCandidates = (jobId) => {
-  //   const fetchcandidates = async () => {
-  //     const result = await axios(
-  //       `https://jobs-api.squareboat.info/api/v1 /recruiters/jobs/4{jobId}/candidates`,
-  //       { headers: { Authorization: `${user}` } }
-  //     );
-  //     seCandidates(result.data);
+  const getOneJobCandidates = (jobId, isShow) => {
+    const token = JSON.parse(user);
+    const fetchcandidates = async () => {
+      const result = await axios(
+        `https://jobs-api.squareboat.info/api/v1/recruiters/jobs/${jobId}/candidates`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      console.log(result);
+      const data = result.data;
+      seCandidates(data);
+      // data.length ? seCandidates(data) : seCandidates([]);
+      // result.data ? seCandidates(result.data.data) : seCandidates([]);
+      // seCandidates(result.data);
+    };
 
-  //     fetchcandidates();
-  //   };
-  // };
+    fetchcandidates();
+    closeModal(isShow);
+  };
+
+  const closeModal = (isShow) => {
+    setShow(!isShow);
+  };
+
+  console.log(user);
 
   return (
     <>
@@ -81,9 +100,12 @@ function App() {
       )}
       {user && (
         <JobsPage
-          // getOneJobCandidates={getOneJobCandidates}
+          getOneJobCandidates={getOneJobCandidates}
           handleLogout={handleLogout}
           user={user}
+          candidates={candidates}
+          show={show}
+          closeModal={closeModal}
           candidates={candidates}
         />
       )}
