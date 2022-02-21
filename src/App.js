@@ -49,14 +49,6 @@ function App() {
 
   return (
     <>
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/login"
-          element={<LoginForm handleUser={handleUser} user={user} />}
-        />
-        <Route path="/jobs" element={<JobsPage />} />
-      </Routes> */}
       {homePage && !user && (
         <Home
           handleHomePage={handleHomePage}
@@ -67,6 +59,7 @@ function App() {
       )}
       {loginPage && (
         <LoginForm
+          loginPage={loginPage}
           handleHomePage={handleHomePage}
           handleUser={handleUser}
           user={user}

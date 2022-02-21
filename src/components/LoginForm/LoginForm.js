@@ -5,15 +5,11 @@ import "./LoginForm.css";
 import Button from "../Button.js/Button";
 
 function LoginForm(props) {
-  // const [email, setEmail] = useState("");
-  // const [password, setFormData] = useState("");
   const [isLogged, setLogged] = useState(true);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-
-  console.log(props);
 
   useEffect(() => {
     setLogged(true);
@@ -21,9 +17,6 @@ function LoginForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(email, password);
-    // setFields({ email: email, password: password });
-    console.log(formData);
     if (
       (formData.email === "squareboat@gmail.com" &&
         formData.password === "squareboat") ||
@@ -50,7 +43,10 @@ function LoginForm(props) {
   return (
     <div className="nav-parent">
       <div className="top">
-        <Nav handleHomePage={props.handleHomePage} />
+        <Nav
+          loginPage={props.loginPage}
+          handleHomePage={props.handleHomePage}
+        />
       </div>
       <div className="bottom"></div>
       <div className="form">

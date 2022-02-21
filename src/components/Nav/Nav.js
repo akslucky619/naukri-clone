@@ -21,7 +21,7 @@ function Nav(props) {
           <span style={{ color: "#43AFFF" }}>Jobs</span>
         </div>
         <div className="title-button">
-          {!props.user && (
+          {!props.user && !props.loginPage && (
             // <button onClick={props.handleLoginPage}>
             //   <nav>
             //   <Link to="/login">Login/Signup</Link>
